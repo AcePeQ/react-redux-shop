@@ -1,3 +1,15 @@
 .header {
   position: absolute;
+
+  background-color: var(--background-dark);
+  box-shadow: 0 6px 12px var(--shadow-color);
+
+  top: 6.5rem;
+  left: 8rem;
+
+  border-radius: 16px;
+  padding: 0.5rem 1rem;
+
+  display: flex;
+  gap: 1.5rem;
 }
