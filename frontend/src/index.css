@@ -1,3 +1,45 @@
+:root {
+  /* Kolory główne */
+  --primary-color: #d4a574; /* Ciepły złoty - elegancki */
+  --primary-dark: #b8935f; /* Ciemniejszy złoty */
+  --primary-light: #e8c79a; /* Jasniejszy złoty */
+
+  /* Kolory akcentowe */
+  --accent-color: #8b4513; /* Ciepły brąz */
+  --accent-light: #a0522d; /* Jasniejszy brąz */
+
+  /* Kolory neutralne */
+  --background-primary: #faf8f5; /* Kremowy biały */
+  --background-secondary: #f5f2ed; /* Lekko kremowy */
+  --background-dark: #2c2c2c; /* Ciemny dla kontrastów */
+
+  /* Kolory tekstu */
+  --text-primary: #333333; /* Ciemny szary */
+  --text-secondary: #666666; /* Średni szary */
+  --text-light: #999999; /* Jasny szary */
+  --text-white: #ffffff; /* Biały */
+
+  /* Kolory statusów */
+  --success-color: #4caf50; /* Zielony - dostępne */
+  --warning-color: #ff9800; /* Pomarańczowy - ostrzeżenie */
+  --error-color: #f44336; /* Czerwony - błąd */
+
+  /* Kolory dodatkowe */
+  --border-color: #e0ddd6; /* Delikatny border */
+  --shadow-color: rgba(0, 0, 0, 0.1); /* Cień */
+  --overlay-color: rgba(0, 0, 0, 0.5); /* Overlay */
+
+  --overlay-bg-color: rgba(0, 0, 0, 0.75); /* Overlay */
+
+  --food-red: #c41e3a;
+  --vegetarian-green: #2e7d32;
+  --premium-gold: #ffd700;
+
+  --font-heading: "Forum", serif;
+  --font-body: "Source Sans Pro", sans-serif;
+  --font-accent: "Playfair Display", serif; /* na specjalne elementy */
+}
+
 *,
 *::before,
 *::after {
@@ -17,12 +59,23 @@ html {
 }
 
 body {
-  font-size: 62.5%;
+  font-size: 1.6rem;
   font-weight: 400;
-  font-family: sans-serif;
   line-height: 1.5;
 
+  background-image: url("../public/background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+
   -webkit-font-smoothing: antialiased;
+
+  border-image-source: linear-gradient(
+    var(--overlay-bg-color),
+    var(--overlay-bg-color)
+  );
+  border-image-slice: fill 1;
+
+  min-height: 100dvh;
 }
 
 img,
@@ -54,6 +107,14 @@ h6 {
 p {
   text-wrap: pretty;
 }
+
+body,
+p,
+span,
+div {
+  font-family: var(--font-body);
+}
+
 h1,
 h2,
 h3,
@@ -61,6 +122,7 @@ h4,
 h5,
 h6 {
   text-wrap: balance;
+  font-family: var(--font-heading);
 }
 
 #root,
