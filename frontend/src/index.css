@@ -128,6 +128,13 @@ h6 {
   font-family: var(--font-heading);
 }
 
+a,
+a:link,
+a:visited {
+  color: inherit;
+  text-decoration: none;
+}
+
 #root,
 #__next {
   isolation: isolate;
