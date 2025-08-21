@@ -6,9 +6,6 @@
 
   align-items: flex-end;
   position: relative;
-
-  border-radius: 12px;
-  overflow: hidden;
 }
 
 .video {

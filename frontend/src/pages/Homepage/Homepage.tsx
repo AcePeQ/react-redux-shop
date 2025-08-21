@@ -1,13 +1,30 @@
+import ImageLink from "../../components/ImageLink/ImageLink";
 import VideoHero from "../../components/VideoHero/VideoHero";
 import styles from "./Homepage.module.css";
+
+const links = [
+  { text: "Menu", imagePath: "/public/seafood-paella.jpg", path: "/menu" },
+  { text: "Cart", imagePath: "/public/seafood-paella.jpg", path: "/cart" },
+  {
+    text: "Contact",
+    imagePath: "/public/seafood-paella.jpg",
+    path: "/Contact",
+  },
+];
 
 function Homepage() {
   return (
     <div className={styles.container}>
       <VideoHero />
-      <div className={styles.box2}>Box2</div>
-      <div className={styles.box3}>Box3</div>
-      <div className={styles.box4}>Box4</div>
+
+      {links.map((link) => (
+        <ImageLink
+          key={link.text}
+          path={link.path}
+          imagePath={link.imagePath}
+          text={link.text}
+        />
+      ))}
     </div>
   );
 }
