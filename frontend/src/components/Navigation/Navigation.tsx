@@ -1,5 +1,7 @@
-import { Link } from "react-router";
+import { NavLink } from "react-router";
 import styles from "./Navigation.module.css";
+
+import { AnimatePresence, motion } from "motion/react";
 
 const links = [
   { text: "Menu", path: "/menu" },
@@ -13,10 +15,25 @@ function Navigation() {
       <ul className={styles.list}>
         {links.map((link) => {
           return (
-            <li className={styles.item}>
-              <Link className={styles.link} to={link.path}>
-                {link.text}
-              </Link>
+            <li key={link.path} className={styles.item}>
+              <NavLink className={styles.link} to={link.path}>
+                {({ isActive }) => (
+                  <>
+                    {link.text}
+                    <AnimatePresence mode="wait">
+                      {isActive && (
+                        <motion.div
+                          initial={{ opacity: 0 }}
+                          animate={{ opacity: 1 }}
+                          exit={{ opacity: 0 }}
+                          layoutId="underline"
+                          className={styles.underline}
+                        />
+                      )}
+                    </AnimatePresence>
+                  </>
+                )}
+              </NavLink>
             </li>
           );
         })}
