@@ -1,8 +1,15 @@
+import { ReactElement } from "react";
 import styles from "./VideoHero.module.css";
 
 import { motion } from "motion/react";
 
-function VideoHero() {
+function VideoHero({
+  videoPath,
+  title,
+}: {
+  videoPath: string;
+  title: string | ReactElement;
+}) {
   return (
     <div className={styles.wrapper}>
       <div className={styles.header}>
@@ -17,7 +24,7 @@ function VideoHero() {
           }}
           className={styles.heading}
         >
-          Qusto <br /> Restaurant
+          {title}
         </motion.h1>
       </div>
       <video
@@ -28,7 +35,7 @@ function VideoHero() {
         muted
         loop
       >
-        <source src="/public/videos/videobg2.mp4" type="video/mp4" />
+        <source src={videoPath} type="video/mp4" />
       </video>
     </div>
   );

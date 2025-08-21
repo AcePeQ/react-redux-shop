@@ -3,11 +3,11 @@ import VideoHero from "../../components/VideoHero/VideoHero";
 import styles from "./Homepage.module.css";
 
 const links = [
-  { text: "Menu", imagePath: "/public/link2.jpg", path: "/menu" },
-  { text: "Cart", imagePath: "/public/link1.jpg", path: "/cart" },
+  { text: "Menu", imagePath: "/link2.jpg", path: "/menu" },
+  { text: "Cart", imagePath: "/link1.jpg", path: "/cart" },
   {
     text: "Contact",
-    imagePath: "/public/link3.jpg",
+    imagePath: "/link3.jpg",
     path: "/Contact",
   },
 ];
@@ -15,7 +15,14 @@ const links = [
 function Homepage() {
   return (
     <div className={styles.container}>
-      <VideoHero />
+      <VideoHero
+        videoPath="/videos/videobg2.mp4"
+        title={
+          <>
+            Qusto <br /> Restaurant
+          </>
+        }
+      />
 
       {links.map((link) => (
         <ImageLink
