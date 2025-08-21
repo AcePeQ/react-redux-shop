@@ -11,7 +11,7 @@
   /* Kolory neutralne */
   --background-primary: #faf8f5; /* Kremowy biały */
   --background-secondary: #f5f2ed; /* Lekko kremowy */
-  --background-dark: #2c2c2c; /* Ciemny dla kontrastów */
+  --background-dark: #000; /* Ciemny dla kontrastów */
 
   /* Kolory tekstu */
   --text-primary: #333333; /* Ciemny szary */

@@ -38,13 +38,12 @@
   content: "";
   position: absolute;
 
-  width: 5rem;
-  height: 1rem;
-
-  background-color: red;
+  border: 15px solid red;
 
   top: -15px;
   right: 0;
 
-  border-radius: 0px 0px 50px 0px;
+  rotate: 180deg;
+
+  border-radius: 0px 0px 0px 0px;
 }
