@@ -27,7 +27,7 @@ function Menu() {
 
   return (
     <section className={styles.section}>
-      <div className={styles.menu}></div>
+      <div className={styles.menu}>Menu</div>
     </section>
   );
 }
