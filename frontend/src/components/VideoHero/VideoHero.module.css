@@ -5,11 +5,33 @@
   display: flex;
 
   align-items: flex-end;
+  position: relative;
+
+  border-radius: 12px;
+  overflow: hidden;
 }
 
-.heading {
+.video {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  object-fit: cover;
+}
+
+.header {
   display: inline-block;
+  position: relative;
+  z-index: 2;
+
+  margin: 0 0 4rem 4rem;
 }
 
 .heading {
+  font-size: 12.6rem;
+  text-transform: uppercase;
+  font-weight: 500;
+  line-height: 1;
+
+  text-shadow: 0 5px 2px var(--background-dark);
 }

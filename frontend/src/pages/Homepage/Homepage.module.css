@@ -5,4 +5,6 @@
   display: grid;
   grid-template-columns: 1fr 35rem;
   grid-template-rows: repeat(3, 1fr);
+
+  gap: 2.5rem;
 }
