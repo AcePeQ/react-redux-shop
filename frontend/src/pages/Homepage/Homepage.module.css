@@ -3,7 +3,7 @@
   height: 100%;
 
   display: grid;
-  grid-template-columns: 1fr 35rem;
+  grid-template-columns: 1fr 42.5rem;
   grid-template-rows: repeat(3, 1fr);
 
   gap: 2rem;

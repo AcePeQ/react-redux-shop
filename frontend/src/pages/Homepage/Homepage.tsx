@@ -3,11 +3,11 @@ import VideoHero from "../../components/VideoHero/VideoHero";
 import styles from "./Homepage.module.css";
 
 const links = [
-  { text: "Menu", imagePath: "/public/seafood-paella.jpg", path: "/menu" },
-  { text: "Cart", imagePath: "/public/seafood-paella.jpg", path: "/cart" },
+  { text: "Menu", imagePath: "/public/link2.jpg", path: "/menu" },
+  { text: "Cart", imagePath: "/public/link1.jpg", path: "/cart" },
   {
     text: "Contact",
-    imagePath: "/public/seafood-paella.jpg",
+    imagePath: "/public/link3.jpg",
     path: "/Contact",
   },
 ];
