@@ -9,6 +9,13 @@ const port = 3000;
 app.use(bodyParser.json());
 app.use(express.static("public"));
 
+app.use((_, res, next) => {
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader("Access-Control-Allow-Methods", "GET, POST");
+  res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+  next();
+});
+
 app.get("/meals", async (_, res) => {
   const meals = await fs.readFile("./data/menu.json", "utf8");
 
