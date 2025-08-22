@@ -87,5 +87,25 @@
   text-shadow: 0 4px 1px var(--background-dark);
 }
 
-.card_back {
+.content {
+  position: relative;
+  z-index: 3;
+
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  justify-content: space-between;
+}
+
+.description {
+  font-size: 2rem;
+}
+
+.price {
+  align-self: flex-end;
+
+  font-size: 3.2rem;
 }
