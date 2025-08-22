@@ -1,0 +1,18 @@
+.section {
+  padding: 12rem 4rem;
+}
+
+.menu {
+  max-width: 160rem;
+  width: 100%;
+
+  margin: 0 auto;
+}
+
+.menu_row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 3rem;
+}

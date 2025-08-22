@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useAppDispatch, useAppSelector } from "../../utils/storeHooks";
 import styles from "./Menu.module.css";
 import { fetchMenu } from "./menuSlice";
+import MenuCard from "./MenuCard/MenuCard";
 
 function Menu() {
   const dispatch = useAppDispatch();
@@ -27,7 +28,14 @@ function Menu() {
 
   return (
     <section className={styles.section}>
-      <div className={styles.menu}>Menu</div>
+      <div className={styles.menu}>
+        <div className={styles.menu_row}>
+          <MenuCard />
+          <MenuCard />
+          <MenuCard />
+          <MenuCard />
+        </div>
+      </div>
     </section>
   );
 }
