@@ -13,10 +13,10 @@
 }
 
 .primary {
-  background-color: var(--primary-color);
+  background-color: var(--primary-light);
   color: var(--text-white);
 
-  box-shadow: 0 5px 10px var(--shadow-color);
+  box-shadow: 0 6px 0px var(--primary-dark);
 
   transition: all 0.3s;
 }
@@ -24,4 +24,6 @@
 .primary:hover,
 .primary:focus-within {
   background-color: var(--primary-dark);
+
+  box-shadow: 0 4px 0px var(--primary-color);
 }
