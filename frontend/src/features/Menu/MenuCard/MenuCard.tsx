@@ -1,6 +1,9 @@
+import { currencyFormater } from "../../../utils/utilsFunctions";
 import styles from "./MenuCard.module.css";
 
 function MenuCard() {
+  const price = currencyFormater(Number("12.99"));
+
   return (
     <div className={styles.container}>
       <article className={styles.card}>
@@ -16,7 +19,7 @@ function MenuCard() {
               Creamy cheddar cheese mixed with perfectly cooked macaroni, topped
               with crispy breadcrumbs. A classic comfort food.
             </p>
-            <p className={styles.price}>$12.99</p>
+            <p className={styles.price}>{price}</p>
           </div>
         </div>
       </article>

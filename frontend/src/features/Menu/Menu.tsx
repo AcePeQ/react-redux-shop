@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { useAppDispatch, useAppSelector } from "../../utils/storeHooks";
+import { useAppDispatch, useAppSelector } from "../../hooks/storeHooks";
 import styles from "./Menu.module.css";
 import { fetchMenu } from "./menuSlice";
 import MenuCard from "./MenuCard/MenuCard";
