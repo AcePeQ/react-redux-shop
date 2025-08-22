@@ -3,6 +3,7 @@ import { useAppDispatch, useAppSelector } from "../../hooks/storeHooks";
 import styles from "./Menu.module.css";
 import { fetchMenu } from "./menuSlice";
 import MenuCard from "./MenuCard/MenuCard";
+import { sliceArrayIntoRows } from "../../utils/utilsFunctions";
 
 function Menu() {
   const dispatch = useAppDispatch();
@@ -25,6 +26,10 @@ function Menu() {
   }
 
   console.log(menu);
+
+  const rowsArray = sliceArrayIntoRows(menu, 4);
+
+  console.log(rowsArray);
 
   return (
     <section className={styles.section}>
