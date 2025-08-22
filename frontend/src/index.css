@@ -26,7 +26,7 @@
 
   /* Kolory dodatkowe */
   --border-color: #e0ddd6; /* Delikatny border */
-  --shadow-color: rgba(0, 0, 0, 0.1); /* Cień */
+  --shadow-color: rgba(0, 0, 0, 0.4); /* Cień */
   --overlay-color: rgba(0, 0, 0, 0.5); /* Overlay */
 
   --overlay-bg-color: rgba(0, 0, 0, 0.75); /* Overlay */

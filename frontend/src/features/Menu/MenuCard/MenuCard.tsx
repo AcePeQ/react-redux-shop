@@ -1,3 +1,4 @@
+import Button from "../../../components/Button/Button";
 import { currencyFormater } from "../../../utils/utilsFunctions";
 import { IMenuItem } from "../menuSlice";
 import styles from "./MenuCard.module.css";
@@ -24,7 +25,7 @@ function MenuCard({ card }: { card: IMenuItem }) {
           <div className={styles.content}>
             <p className={styles.description}>{card.description}</p>
             <div className={styles.content_bottom}>
-              <button>Add to Cart</button>
+              <Button>Add to Cart</Button>
               <p className={styles.price}>{price}</p>
             </div>
           </div>
