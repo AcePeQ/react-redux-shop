@@ -2,8 +2,10 @@ import { useEffect } from "react";
 import { useAppDispatch, useAppSelector } from "../../hooks/storeHooks";
 import styles from "./Menu.module.css";
 import { fetchMenu } from "./menuSlice";
-import MenuCard from "./MenuCard/MenuCard";
+
 import { sliceArrayIntoRows } from "../../utils/utilsFunctions";
+
+import MenuRow from "./MenuRow/MenuRow";
 
 function Menu() {
   const dispatch = useAppDispatch();
@@ -25,21 +27,14 @@ function Menu() {
     return <p>Erorr</p>;
   }
 
-  console.log(menu);
-
   const rowsArray = sliceArrayIntoRows(menu, 4);
-
-  console.log(rowsArray);
 
   return (
     <section className={styles.section}>
       <div className={styles.menu}>
-        <div className={styles.menu_row}>
-          <MenuCard />
-          <MenuCard />
-          <MenuCard />
-          <MenuCard />
-        </div>
+        {rowsArray.map((innerArray) => (
+          <MenuRow innerArray={innerArray} />
+        ))}
       </div>
     </section>
   );

@@ -1,5 +1,5 @@
 .section {
-  padding: 12rem 4rem;
+  padding: 12rem 4rem 6rem;
 }
 
 .menu {
@@ -7,6 +7,11 @@
   width: 100%;
 
   margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 6rem;
 }
 
 .menu_row {

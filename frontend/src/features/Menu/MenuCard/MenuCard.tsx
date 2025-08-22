@@ -1,25 +1,32 @@
 import { currencyFormater } from "../../../utils/utilsFunctions";
+import { IMenuItem } from "../menuSlice";
 import styles from "./MenuCard.module.css";
 
-function MenuCard() {
-  const price = currencyFormater(Number("12.99"));
+function MenuCard({ card }: { card: IMenuItem }) {
+  const price = currencyFormater(Number(card.price));
 
   return (
     <div className={styles.container}>
       <article className={styles.card}>
         <div className={styles.card_front}>
-          <img className={styles.bg_image} src="/seafood-paella.jpg" />
-          <h2 className={styles.heading}>Seafood Paella</h2>
+          <img
+            className={styles.bg_image}
+            src={`http://localhost:3000/${card.image}`}
+          />
+          <h2 className={styles.heading}>{card.name}</h2>
         </div>
         <div className={styles.card_back}>
-          <img className={styles.bg_image} src="/seafood-paella.jpg" />
+          <img
+            className={styles.bg_image}
+            src={`http://localhost:3000/${card.image}`}
+          />
           <div className={styles.bg_overlay} />
           <div className={styles.content}>
-            <p className={styles.description}>
-              Creamy cheddar cheese mixed with perfectly cooked macaroni, topped
-              with crispy breadcrumbs. A classic comfort food.
-            </p>
-            <p className={styles.price}>{price}</p>
+            <p className={styles.description}>{card.description}</p>
+            <div className={styles.content_bottom}>
+              <button>Add to Cart</button>
+              <p className={styles.price}>{price}</p>
+            </div>
           </div>
         </div>
       </article>
