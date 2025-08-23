@@ -26,36 +26,27 @@
   color: var(--primary-light);
 }
 
-.hours {
+.address {
+  font: inherit;
   display: flex;
   flex-direction: column;
 
   width: 100%;
 
-  gap: 1rem;
+  gap: 2rem;
 }
 
-.hour_row {
-  display: grid;
-  grid-template-columns: max-content 1fr max-content;
-  column-gap: 1rem;
-
+.address_row {
   font-size: 2rem;
   font-weight: 400;
 
   color: var(--primary-light);
+
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
 }
 
-.dots {
-  position: relative;
-}
-
-.dots::after {
-  position: absolute;
-  content: "";
-
-  width: 100%;
-  bottom: 8px;
-
-  border-bottom: 2px dotted var(--text-primary);
+.content {
+  text-align: right;
 }

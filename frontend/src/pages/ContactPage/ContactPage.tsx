@@ -1,3 +1,4 @@
+import Contact from "../../components/Contact/Contact";
 import OpeningHours from "../../components/OpeningHours/OpeningHours";
 import VideoHero from "../../components/VideoHero/VideoHero";
 import styles from "./ContactPage.module.css";
@@ -9,7 +10,7 @@ function ContactPage() {
 
       <div className={styles.inner_container}>
         <OpeningHours />
-        <div>Box3</div>
+        <Contact />
         <div>Box4</div>
         <div>Box5</div>
       </div>
