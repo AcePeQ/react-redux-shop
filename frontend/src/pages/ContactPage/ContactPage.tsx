@@ -1,4 +1,5 @@
 import Contact from "../../components/Contact/Contact";
+import Gallery from "../../components/Gallery/Gallery";
 import Map from "../../components/Map/Map";
 import OpeningHours from "../../components/OpeningHours/OpeningHours";
 import VideoHero from "../../components/VideoHero/VideoHero";
@@ -11,8 +12,9 @@ function ContactPage() {
 
       <div className={styles.inner_container}>
         <OpeningHours />
-        <Contact />
+        <Gallery />
         <Map />
+        <Contact />
       </div>
     </div>
   );

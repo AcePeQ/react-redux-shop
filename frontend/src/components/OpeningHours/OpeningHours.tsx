@@ -19,9 +19,9 @@ function OpeningHours() {
 
         <div className={styles.hours}>
           {hoursArray.map((item) => (
-            <p className={styles.hour_row}>
+            <p key={item.day} className={styles.hour_row}>
               <span className={styles.day}>{item.day}</span>
-              <span aria- className={styles.dots}></span>
+              <span className={styles.dots}></span>
               <span className={styles.hour}>{item.hours}</span>
             </p>
           ))}

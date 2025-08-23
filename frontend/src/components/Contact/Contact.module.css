@@ -1,8 +1,6 @@
 .wrapper {
   border: 1px solid var(--primary-light);
   border-radius: 12px;
-
-  padding: 4rem;
 }
 
 .container {
@@ -10,6 +8,8 @@
   flex-direction: column;
 
   height: 100%;
+
+  padding: 2rem 4rem;
 }
 
 .heading {

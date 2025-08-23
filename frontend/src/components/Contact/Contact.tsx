@@ -4,9 +4,9 @@ const contactArray = [
   {
     title: "Address",
     text: (
-      <span>
+      <>
         Jezuicka Street 12, <br /> Warsaw 00-051
-      </span>
+      </>
     ),
   },
   { title: "Phone", text: "+48 123 567 444" },
@@ -23,7 +23,7 @@ function Contact() {
 
         <address className={styles.address}>
           {contactArray.map((item) => (
-            <div className={styles.address_row}>
+            <div key={item.title} className={styles.address_row}>
               <p className={styles.title}>{item.title}</p>
               <p className={styles.content}>{item.text}</p>
             </div>
