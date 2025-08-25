@@ -1,6 +1,4 @@
 .cart {
-  margin-top: 4rem;
-
   display: grid;
   grid-template-columns: 1fr max-content;
   gap: 5rem;
