@@ -14,6 +14,10 @@
   border-bottom: 1px solid var(--primary-light);
 }
 
+.item:last-child {
+  border-bottom: 1px solid transparent;
+}
+
 .image {
   width: 15rem;
   aspect-ratio: 1/1;
