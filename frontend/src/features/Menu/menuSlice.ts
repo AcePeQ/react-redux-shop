@@ -2,7 +2,7 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { AppDispatch } from "../../stores/store";
 
 interface MenuState {
-  menu: IMenuItem[] | [];
+  menu: IMenuItem[];
   isMenuFetched: boolean;
   isLoading: boolean;
   error: string | null;

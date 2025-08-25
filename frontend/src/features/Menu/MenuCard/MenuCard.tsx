@@ -1,10 +1,15 @@
 import Button from "../../../components/Button/Button";
+import { useAppDispatch } from "../../../hooks/storeHooks";
 import { currencyFormater } from "../../../utils/utilsFunctions";
 import { IMenuItem } from "../menuSlice";
 import styles from "./MenuCard.module.css";
 
 function MenuCard({ card }: { card: IMenuItem }) {
+  const dispatch = useAppDispatch();
+
   const price = currencyFormater(Number(card.price));
+
+  function handleAddItemToCart() {}
 
   return (
     <div className={styles.container}>
