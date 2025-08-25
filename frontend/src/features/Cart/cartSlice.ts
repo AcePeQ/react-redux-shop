@@ -1,4 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { IMenuItem } from "../Menu/menuSlice";
 
 export interface ICartItem {
   id: string;
@@ -21,7 +22,7 @@ const cartSlice = createSlice({
   name: "cart",
   initialState,
   reducers: {
-    addToCart: (state, action: PayloadAction<ICartItem>) => {
+    addToCart: (state, action: PayloadAction<IMenuItem>) => {
       const newCartItem = { ...action.payload, quantity: 1 };
       state.cart.push(newCartItem);
     },

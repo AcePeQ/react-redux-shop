@@ -1,15 +1,17 @@
 import Button from "../../../components/Button/Button";
 import { useAppDispatch } from "../../../hooks/storeHooks";
 import { currencyFormater } from "../../../utils/utilsFunctions";
+import { addToCart } from "../../Cart/cartSlice";
 import { IMenuItem } from "../menuSlice";
 import styles from "./MenuCard.module.css";
 
 function MenuCard({ card }: { card: IMenuItem }) {
   const dispatch = useAppDispatch();
-
   const price = currencyFormater(Number(card.price));
 
-  function handleAddItemToCart() {}
+  function handleAddItemToCart() {
+    dispatch(addToCart(card));
+  }
 
   return (
     <div className={styles.container}>
@@ -30,7 +32,7 @@ function MenuCard({ card }: { card: IMenuItem }) {
           <div className={styles.content}>
             <p className={styles.description}>{card.description}</p>
             <div className={styles.content_bottom}>
-              <Button>Add to Cart</Button>
+              <Button onClick={handleAddItemToCart}>Add to Cart</Button>
               <p className={styles.price}>{price}</p>
             </div>
           </div>
