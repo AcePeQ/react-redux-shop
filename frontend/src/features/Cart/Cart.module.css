@@ -1,0 +1,9 @@
+.cart {
+  margin-top: 4rem;
+}
+
+.list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
