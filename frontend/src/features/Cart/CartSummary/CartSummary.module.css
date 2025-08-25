@@ -1,0 +1,35 @@
+.summary {
+  width: 100%;
+  height: 100%;
+
+  position: relative;
+}
+
+.summarySticky {
+  position: sticky;
+  top: 10rem;
+  left: 0;
+
+  button {
+    margin-top: 1rem;
+    width: 100%;
+  }
+}
+
+.summaryRow {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+  gap: 10rem;
+
+  font-size: 2.4rem;
+
+  border-bottom: 2px solid var(--text-primary);
+
+  padding: 1rem 2rem;
+}
+
+.summaryRow:last-child {
+  border-bottom: 2px solid transparent;
+}
