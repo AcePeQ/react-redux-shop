@@ -33,6 +33,13 @@
   justify-content: center;
 
   gap: 1rem;
+
+  background: none;
+  border: none;
+
+  color: inherit;
+
+  cursor: pointer;
 }
 
 .step:nth-child(1) {

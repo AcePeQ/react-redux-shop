@@ -11,19 +11,12 @@ interface ShipmentFormData {
 
 interface ProgressState {
   currentStep: number;
-  userShippment: ShipmentFormData;
+  userShippment: ShipmentFormData | null;
 }
 
 const initialState: ProgressState = {
   currentStep: 1,
-  userShippment: {
-    fullName: "",
-    email: "",
-    phoneNumber: "",
-    address: "",
-    city: "",
-    zipCode: "",
-  },
+  userShippment: null,
 };
 
 const cartProgressSlice = createSlice({
@@ -34,7 +27,10 @@ const cartProgressSlice = createSlice({
       state.currentStep = action.payload;
     },
 
-    saveUserShipment: (state, action: PayloadAction<ShipmentFormData>) => {
+    saveUserShipment: (
+      state,
+      action: PayloadAction<ShipmentFormData | null>
+    ) => {
       state.userShippment = action.payload;
     },
   },

@@ -1,21 +1,32 @@
+import { useAppDispatch } from "../../../hooks/storeHooks";
+import { changeStep } from "../cartProgressSlice";
 import styles from "./CartProgress.module.css";
 
 const steps = [
-  { title: "Cart", id: 1 },
-  { title: "Shippment", id: 2 },
-  { title: "Summary", id: 3 },
+  { title: "Cart", id: 0 },
+  { title: "Shippment", id: 1 },
+  { title: "Summary", id: 2 },
 ];
 
 function CartProgress() {
+  const dispatch = useAppDispatch();
+
+  function changeProgressStep(step: number) {
+    dispatch(changeStep(step));
+  }
+
   return (
     <div className={styles.progressWrapper}>
       <ul className={styles.progressBox}>
         {steps.map((step) => (
           <li key={step.id} className={styles.step}>
-            <div className={styles.centerBox}>
-              <div className={styles.number}>{step.id}</div>
+            <button
+              onClick={() => changeProgressStep(step.id)}
+              className={styles.centerBox}
+            >
+              <div className={styles.number}>{step.id + 1}</div>
               <p className={styles.stepText}>{step.title}</p>
-            </div>
+            </button>
           </li>
         ))}
       </ul>

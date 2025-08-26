@@ -2,7 +2,7 @@ import { useActionState } from "react";
 import FormRow from "../../components/FormRow/FormRow";
 import styles from "./Shipment.module.css";
 import { useAppDispatch } from "../../hooks/storeHooks";
-import { saveUserShipment } from "../Cart/cartProgressSlice";
+import { changeStep, saveUserShipment } from "../Cart/cartProgressSlice";
 import Button from "../../components/Button/Button";
 
 interface IShipmentObj {
@@ -120,6 +120,10 @@ function Shipment() {
     errors: null,
   });
 
+  function handleChangeStep(step: number) {
+    dispatch(changeStep(step));
+  }
+
   return (
     <div className={styles.shipmentWrapper}>
       <form action={formAction} className={styles.form}>
@@ -162,8 +166,16 @@ function Shipment() {
         />
 
         <div className={styles.actions}>
-          <Button>Go Back</Button>
-          <Button type="submit">Go to Summary</Button>
+          <Button onClick={() => handleChangeStep(0)} isDisabled={isPending}>
+            Go Back
+          </Button>
+          <Button
+            onClick={() => handleChangeStep(2)}
+            isDisabled={isPending}
+            type="submit"
+          >
+            Go to Summary
+          </Button>
         </div>
       </form>
     </div>
