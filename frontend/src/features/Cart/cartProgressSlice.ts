@@ -1,12 +1,17 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+
+interface ShipmentFormData {
+  fullName: string;
+  email: string;
+  phoneNumber: string;
+  address: string;
+  city: string;
+  zipCode: string;
+}
 
 interface ProgressState {
   currentStep: number;
-  userShippment: {
-    fullName: string;
-    email: string;
-    street: string;
-  };
+  userShippment: ShipmentFormData;
 }
 
 const initialState: ProgressState = {
@@ -14,14 +19,27 @@ const initialState: ProgressState = {
   userShippment: {
     fullName: "",
     email: "",
-    street: "",
+    phoneNumber: "",
+    address: "",
+    city: "",
+    zipCode: "",
   },
 };
 
 const cartProgressSlice = createSlice({
   name: "cartProgress",
   initialState,
-  reducers: {},
+  reducers: {
+    changeStep: (state, action: PayloadAction<number>) => {
+      state.currentStep = action.payload;
+    },
+
+    saveUserShipment: (state, action: PayloadAction<ShipmentFormData>) => {
+      state.userShippment = action.payload;
+    },
+  },
 });
+
+export const { changeStep, saveUserShipment } = cartProgressSlice.actions;
 
 export default cartProgressSlice.reducer;
