@@ -33,10 +33,15 @@ const orderSlice = createSlice({
     setError: (state, action: PayloadAction<string | null>) => {
       state.error = action.payload;
     },
+    clearOrder: (state) => {
+      state.orderStatus = "idle";
+      state.error = null;
+    },
   },
 });
 
-export const { setOrderStatus, setPending, setError } = orderSlice.actions;
+export const { setOrderStatus, setPending, setError, clearOrder } =
+  orderSlice.actions;
 
 export function orderMeal(order: TOrder) {
   return async (dispatch: AppDispatch) => {
@@ -73,7 +78,6 @@ export function orderMeal(order: TOrder) {
       }
     } finally {
       dispatch(setPending(false));
-      dispatch(setOrderStatus("idle"));
     }
   };
 }

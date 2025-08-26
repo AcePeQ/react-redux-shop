@@ -9,9 +9,11 @@ import styles from "./CartSummary.module.css";
 function CartSummary({
   onNext,
   buttonText,
+  isButtonDisable,
 }: {
   onNext: () => void;
   buttonText: string;
+  isButtonDisable: boolean;
 }) {
   const cart = useAppSelector((state) => state.cart.cart);
 
@@ -40,7 +42,11 @@ function CartSummary({
           <p>{currencyFormater(totalPrice + deliverPrice)}</p>
         </div>
 
-        {cart.length > 0 && <Button onClick={onNext}>{buttonText}</Button>}
+        {cart.length > 0 && (
+          <Button isDisabled={isButtonDisable} onClick={onNext}>
+            {buttonText}
+          </Button>
+        )}
       </div>
     </div>
   );

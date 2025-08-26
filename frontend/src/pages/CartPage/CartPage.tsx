@@ -1,13 +1,20 @@
+import { useEffect } from "react";
 import Cart from "../../features/Cart/Cart";
 import CartProgress from "../../features/Cart/CartProgress/CartProgress";
 import Shipment from "../../features/Shipment/Shipment";
 import Summary from "../../features/Summary/Summary";
-import { useAppSelector } from "../../hooks/storeHooks";
+import { useAppDispatch, useAppSelector } from "../../hooks/storeHooks";
 
 import styles from "./CartPage.module.css";
+import { changeStep } from "../../features/Cart/cartProgressSlice";
 
 function CartPage() {
   const currentStep = useAppSelector((state) => state.progress.currentStep);
+  const dispatch = useAppDispatch();
+
+  useEffect(() => {
+    dispatch(changeStep(0));
+  }, [dispatch]);
 
   const stepHeading =
     currentStep === 0 ? "Cart" : currentStep === 1 ? "Shipment" : "Summary";

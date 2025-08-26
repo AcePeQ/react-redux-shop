@@ -15,7 +15,7 @@
 }
 
 .summaryGrid {
-  grid-template-columns: max-content 1fr max-content max-content;
+  grid-template-columns: max-content 1fr max-content 10rem;
 }
 
 .item:last-child {
