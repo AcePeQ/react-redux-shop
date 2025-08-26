@@ -8,11 +8,16 @@ function Cart() {
 
   return (
     <div className={styles.cart}>
-      <ul className={styles.list}>
-        {cart.map((item) => (
-          <CartItem key={item.id} item={item} />
-        ))}
-      </ul>
+      {cart.length > 0 ? (
+        <ul className={styles.list}>
+          {cart.map((item) => (
+            <CartItem key={item.id} item={item} />
+          ))}
+        </ul>
+      ) : (
+        <p className={styles.empty}>Cart is empty</p>
+      )}
+
       <CartSummary />
     </div>
   );

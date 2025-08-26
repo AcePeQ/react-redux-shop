@@ -1,5 +1,6 @@
 import Cart from "../../features/Cart/Cart";
 import CartProgress from "../../features/Cart/CartProgress/CartProgress";
+
 import styles from "./CartPage.module.css";
 
 function CartPage() {
@@ -9,7 +10,6 @@ function CartPage() {
         <h2 className={styles.heading}>Cart</h2>
 
         <CartProgress />
-
         <Cart />
       </div>
     </section>

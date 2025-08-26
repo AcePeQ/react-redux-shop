@@ -34,7 +34,7 @@ function CartSummary() {
           <p>{currencyFormater(totalPrice + deliverPrice)}</p>
         </div>
 
-        <Button>Checkout</Button>
+        {cart.length > 0 && <Button>Checkout</Button>}
       </div>
     </div>
   );
