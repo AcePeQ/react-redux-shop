@@ -16,3 +16,15 @@ export function sliceArrayIntoRows(array: IMenuItem[], itemCount: number) {
 
   return newArray;
 }
+
+export function calculateDeliveryCost(totalPrice: number) {
+  if (totalPrice <= 0) return 0;
+
+  if (totalPrice > 0 && totalPrice <= 35) return 7.5;
+
+  if (totalPrice > 35 && totalPrice <= 70) return 5;
+
+  if (totalPrice > 70) return 3.5;
+
+  return 5;
+}

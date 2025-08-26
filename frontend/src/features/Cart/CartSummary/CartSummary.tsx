@@ -1,6 +1,9 @@
 import Button from "../../../components/Button/Button";
 import { useAppSelector } from "../../../hooks/storeHooks";
-import { currencyFormater } from "../../../utils/utilsFunctions";
+import {
+  calculateDeliveryCost,
+  currencyFormater,
+} from "../../../utils/utilsFunctions";
 import styles from "./CartSummary.module.css";
 
 function CartSummary() {
@@ -11,7 +14,7 @@ function CartSummary() {
     0
   );
 
-  const deliverPrice = 5;
+  const deliverPrice = calculateDeliveryCost(totalPrice);
 
   return (
     <div className={styles.summary}>
