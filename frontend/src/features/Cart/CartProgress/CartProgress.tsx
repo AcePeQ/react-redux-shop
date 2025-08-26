@@ -1,4 +1,4 @@
-import { useAppDispatch } from "../../../hooks/storeHooks";
+import { useAppDispatch, useAppSelector } from "../../../hooks/storeHooks";
 import { changeStep } from "../cartProgressSlice";
 import styles from "./CartProgress.module.css";
 
@@ -9,9 +9,13 @@ const steps = [
 ];
 
 function CartProgress() {
+  const currentStep = useAppSelector((state) => state.progress.currentStep);
   const dispatch = useAppDispatch();
 
   function changeProgressStep(step: number) {
+    console.log(currentStep, step);
+    if (currentStep <= step) return;
+
     dispatch(changeStep(step));
   }
 

@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
-interface ShipmentFormData {
+export interface ShipmentFormData {
   fullName: string;
   email: string;
   phoneNumber: string;
@@ -15,7 +15,7 @@ interface ProgressState {
 }
 
 const initialState: ProgressState = {
-  currentStep: 1,
+  currentStep: 2,
   userShippment: null,
 };
 

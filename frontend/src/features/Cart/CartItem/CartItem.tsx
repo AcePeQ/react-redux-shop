@@ -4,7 +4,13 @@ import { currencyFormater } from "../../../utils/utilsFunctions";
 import { deleteFromCart, ICartItem, updateItemQuantity } from "../cartSlice";
 import styles from "./CartItem.module.css";
 
-function CartItem({ item }: { item: ICartItem }) {
+function CartItem({
+  item,
+  isSummary,
+}: {
+  item: ICartItem;
+  isSummary: boolean;
+}) {
   const dispatch = useAppDispatch();
   const price = currencyFormater(Number(item.price));
 
@@ -17,29 +23,35 @@ function CartItem({ item }: { item: ICartItem }) {
   }
 
   return (
-    <li className={styles.item}>
+    <li className={`${styles.item} ${styles[isSummary ? "summaryGrid" : ""]}`}>
       <img
         className={styles.image}
         src={`http://localhost:3000/${item.image}`}
       />
       <h2 className={styles.heading}>{item.name}</h2>
       <div className={styles.actionButtons}>
-        <button
-          onClick={() => handleUpdateItem(-1)}
-          className={styles.buttonQuantity}
-        >
-          -
-        </button>
-        <span className={styles.quantity}>{item.quantity}</span>
-        <button
-          onClick={() => handleUpdateItem(1)}
-          className={styles.buttonQuantity}
-        >
-          +
-        </button>
+        {!isSummary && (
+          <button
+            onClick={() => handleUpdateItem(-1)}
+            className={styles.buttonQuantity}
+          >
+            -
+          </button>
+        )}
+        <span className={styles.quantity}>
+          {isSummary && "Quantity:"} {item.quantity}
+        </span>
+        {!isSummary && (
+          <button
+            onClick={() => handleUpdateItem(1)}
+            className={styles.buttonQuantity}
+          >
+            +
+          </button>
+        )}
       </div>
       <p className={styles.price}>{price}</p>
-      <Button onClick={handleDeleteItem}>X</Button>
+      {!isSummary && <Button onClick={handleDeleteItem}>X</Button>}
     </li>
   );
 }

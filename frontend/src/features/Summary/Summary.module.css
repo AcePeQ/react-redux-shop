@@ -1,0 +1,16 @@
+.cart {
+  display: grid;
+  grid-template-columns: 1fr max-content;
+  gap: 5rem;
+}
+
+.list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.empty {
+  text-align: left;
+  font-size: 4.2rem;
+}

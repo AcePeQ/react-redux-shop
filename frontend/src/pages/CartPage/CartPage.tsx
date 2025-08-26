@@ -1,6 +1,7 @@
 import Cart from "../../features/Cart/Cart";
 import CartProgress from "../../features/Cart/CartProgress/CartProgress";
 import Shipment from "../../features/Shipment/Shipment";
+import Summary from "../../features/Summary/Summary";
 import { useAppSelector } from "../../hooks/storeHooks";
 
 import styles from "./CartPage.module.css";
@@ -12,7 +13,13 @@ function CartPage() {
     currentStep === 0 ? "Cart" : currentStep === 1 ? "Shipment" : "Summary";
 
   const stepContent =
-    currentStep === 0 ? <Cart /> : currentStep === 1 ? <Shipment /> : "Summary";
+    currentStep === 0 ? (
+      <Cart />
+    ) : currentStep === 1 ? (
+      <Shipment />
+    ) : (
+      <Summary />
+    );
 
   return (
     <section className={styles.section}>

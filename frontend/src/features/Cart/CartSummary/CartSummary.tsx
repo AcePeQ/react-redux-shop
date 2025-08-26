@@ -1,19 +1,19 @@
 import Button from "../../../components/Button/Button";
-import { useAppDispatch, useAppSelector } from "../../../hooks/storeHooks";
+import { useAppSelector } from "../../../hooks/storeHooks";
 import {
   calculateDeliveryCost,
   currencyFormater,
 } from "../../../utils/utilsFunctions";
-import { changeStep } from "../cartProgressSlice";
 import styles from "./CartSummary.module.css";
 
-function CartSummary() {
+function CartSummary({
+  onNext,
+  buttonText,
+}: {
+  onNext: () => void;
+  buttonText: string;
+}) {
   const cart = useAppSelector((state) => state.cart.cart);
-  const dispatch = useAppDispatch();
-
-  function handleChangeStep() {
-    dispatch(changeStep(1));
-  }
 
   const totalPrice = cart.reduce(
     (acc, val) => (acc += Number(val.price) * val.quantity),
@@ -40,9 +40,7 @@ function CartSummary() {
           <p>{currencyFormater(totalPrice + deliverPrice)}</p>
         </div>
 
-        {cart.length > 0 && (
-          <Button onClick={handleChangeStep}>Checkout</Button>
-        )}
+        {cart.length > 0 && <Button onClick={onNext}>{buttonText}</Button>}
       </div>
     </div>
   );
