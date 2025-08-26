@@ -12,21 +12,13 @@ function CartPage() {
     currentStep === 0 ? "Cart" : currentStep === 1 ? "Shipment" : "Summary";
 
   const stepContent =
-    currentStep === 0 ? (
-      <>
-        <CartProgress />
-        <Cart />
-      </>
-    ) : currentStep === 1 ? (
-      <Shipment />
-    ) : (
-      "Summary"
-    );
+    currentStep === 0 ? <Cart /> : currentStep === 1 ? <Shipment /> : "Summary";
 
   return (
     <section className={styles.section}>
       <div className={styles.container}>
         <h2 className={styles.heading}>{stepHeading}</h2>
+        <CartProgress />
 
         {stepContent}
       </div>

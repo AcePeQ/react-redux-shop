@@ -15,7 +15,7 @@ interface ProgressState {
 }
 
 const initialState: ProgressState = {
-  currentStep: 0,
+  currentStep: 1,
   userShippment: {
     fullName: "",
     email: "",

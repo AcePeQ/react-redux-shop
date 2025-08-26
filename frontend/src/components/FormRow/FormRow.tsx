@@ -21,11 +21,12 @@ function FormRow({
         {label}
       </label>
       <input
-        className={styles.number}
+        className={styles.input}
         type={type}
         id={id}
         name={id}
         defaultValue={defaultValue}
+        placeholder=" "
       />
       {error && <p className={styles.error}>{error}</p>}
     </p>

@@ -3,6 +3,7 @@ import FormRow from "../../components/FormRow/FormRow";
 import styles from "./Shipment.module.css";
 import { useAppDispatch } from "../../hooks/storeHooks";
 import { saveUserShipment } from "../Cart/cartProgressSlice";
+import Button from "../../components/Button/Button";
 
 interface IShipmentObj {
   field: string;
@@ -159,6 +160,11 @@ function Shipment() {
           defaultValue={formState.enteredValues?.zipCode}
           error={formState.errors?.zipCode?.error}
         />
+
+        <div className={styles.actions}>
+          <Button>Go Back</Button>
+          <Button type="submit">Go to Summary</Button>
+        </div>
       </form>
     </div>
   );
