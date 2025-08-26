@@ -26,6 +26,28 @@ app.get("/meals", async (_, res) => {
   res.status(200).json(JSON.parse(meals));
 });
 
+app.post("/order", async (req, res) => {
+  const orderData = req.body.order;
+  const shipmentData = req.body.shipment;
+
+  if (!orderData || !shipmentData) {
+    return res.status(400).json({ message: "Missing data." });
+  }
+
+  const newOrder = {
+    id: (Math.random() * 1000).toString(),
+    orderData,
+    shipmentData,
+  };
+
+  const allOrders = JSON.parse(orders);
+  allOrders.push(newOrder);
+
+  await fs.writeFile("./data/orders.json", JSON.stringify(allOrders));
+
+  res.status(201).json({ message: "Order created!" });
+});
+
 app.listen(port, () => {
   console.log(`App listening on port: ${port}`);
 });
