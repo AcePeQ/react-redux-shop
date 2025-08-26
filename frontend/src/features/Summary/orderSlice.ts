@@ -59,17 +59,21 @@ export function orderMeal(order: TOrder) {
     };
 
     try {
+      dispatch(setOrderStatus("pending"));
       dispatch(setPending(true));
       await sendOrder();
       dispatch(setOrderStatus("success"));
     } catch (error) {
       if (error instanceof Error) {
         dispatch(setError(error.message || null));
+        dispatch(setOrderStatus("error"));
       } else {
         dispatch(setError("Could not fetch menu data!"));
+        dispatch(setOrderStatus("error"));
       }
     } finally {
       dispatch(setPending(false));
+      dispatch(setOrderStatus("idle"));
     }
   };
 }
