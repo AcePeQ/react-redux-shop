@@ -8,7 +8,7 @@ import styles from "./ContactPage.module.css";
 function ContactPage() {
   return (
     <div className={styles.container}>
-      <VideoHero videoPath="/videos/videobg4.mp4" title="Contact" />
+      <VideoHero videoPath="/videos/videobg3.mp4" title="Contact" />
 
       <div className={styles.inner_container}>
         <OpeningHours />

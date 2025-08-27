@@ -8,7 +8,7 @@ const photos = [
   { id: 0, path: "/link1.jpg" },
   { id: 1, path: "/link2.jpg" },
   { id: 2, path: "/link3.jpg" },
-  { id: 3, path: "/seafood-paella.jpg" },
+  { id: 3, path: "/background.jpg" },
 ];
 
 const figureVariants = {
