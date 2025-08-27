@@ -4,7 +4,7 @@
 
 .link:link,
 .link:visited {
-  color: var(--primary-color);
+  color: var(--primary-first);
   text-decoration: none;
 
   transition: color 0.3s;
@@ -36,7 +36,7 @@
 
   text-transform: uppercase;
 
-  background-color: var(--background-dark);
+  background-color: var(--background-first);
 
   padding: 0.5rem 1.5rem;
 
