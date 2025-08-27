@@ -1,3 +1,4 @@
+import AnimatedPage from "../../components/AnimatedPage/AnimatedPage";
 import ImageLink from "../../components/ImageLink/ImageLink";
 import VideoHero from "../../components/VideoHero/VideoHero";
 import styles from "./Homepage.module.css";
@@ -14,25 +15,27 @@ const links = [
 
 function Homepage() {
   return (
-    <div className={styles.container}>
-      <VideoHero
-        videoPath="/videos/videobg2.mp4"
-        title={
-          <>
-            Qusto <br /> Restaurant
-          </>
-        }
-      />
-
-      {links.map((link) => (
-        <ImageLink
-          key={link.text}
-          path={link.path}
-          imagePath={link.imagePath}
-          text={link.text}
+    <AnimatedPage>
+      <div className={styles.container}>
+        <VideoHero
+          videoPath="/videos/videobg2.mp4"
+          title={
+            <>
+              Qusto <br /> Restaurant
+            </>
+          }
         />
-      ))}
-    </div>
+
+        {links.map((link) => (
+          <ImageLink
+            key={link.text}
+            path={link.path}
+            imagePath={link.imagePath}
+            text={link.text}
+          />
+        ))}
+      </div>
+    </AnimatedPage>
   );
 }
 

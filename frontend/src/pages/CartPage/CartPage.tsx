@@ -7,6 +7,7 @@ import { useAppDispatch, useAppSelector } from "../../hooks/storeHooks";
 
 import styles from "./CartPage.module.css";
 import { changeStep } from "../../features/Cart/cartProgressSlice";
+import AnimatedPage from "../../components/AnimatedPage/AnimatedPage";
 
 function CartPage() {
   const currentStep = useAppSelector((state) => state.progress.currentStep);
@@ -29,14 +30,16 @@ function CartPage() {
     );
 
   return (
-    <section className={styles.section}>
-      <div className={styles.container}>
-        <h2 className={styles.heading}>{stepHeading}</h2>
-        <CartProgress />
+    <AnimatedPage>
+      <section className={styles.section}>
+        <div className={styles.container}>
+          <h2 className={styles.heading}>{stepHeading}</h2>
+          <CartProgress />
 
-        {stepContent}
-      </div>
-    </section>
+          {stepContent}
+        </div>
+      </section>
+    </AnimatedPage>
   );
 }
 

@@ -1,0 +1,13 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 100dvh;
+  width: 100%;
+
+  h1 {
+    font-size: 7.2rem;
+    font-weight: 500;
+  }
+}
