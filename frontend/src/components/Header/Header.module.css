@@ -1,10 +1,8 @@
 .header {
   position: absolute;
 
-  background-color: var(--background-dark);
-  box-shadow: 0 6px 12px var(--shadow-color);
-
-  border: 2px solid var(--primary-color);
+  background-color: var(--background-first);
+  box-shadow: 0 6px 8px var(--shadow-color);
 
   top: 6.5rem;
   left: 8rem;
