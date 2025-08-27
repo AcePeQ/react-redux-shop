@@ -113,6 +113,9 @@ function Shipment() {
         zipCode,
       })
     );
+
+    handleChangeStep(2);
+
     return { errors: null };
   }
 
@@ -155,7 +158,7 @@ function Shipment() {
         <FormRow
           label="City"
           id="city"
-          defaultValue={formState.enteredValues?.zipCode}
+          defaultValue={formState.enteredValues?.city}
           error={formState.errors?.city?.error}
         />
         <FormRow
@@ -169,11 +172,7 @@ function Shipment() {
           <Button onClick={() => handleChangeStep(0)} isDisabled={isPending}>
             Go Back
           </Button>
-          <Button
-            onClick={() => handleChangeStep(2)}
-            isDisabled={isPending}
-            type="submit"
-          >
+          <Button isDisabled={isPending} type="submit">
             Go to Summary
           </Button>
         </div>

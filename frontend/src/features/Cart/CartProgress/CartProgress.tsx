@@ -13,7 +13,6 @@ function CartProgress() {
   const dispatch = useAppDispatch();
 
   function changeProgressStep(step: number) {
-    console.log(currentStep, step);
     if (currentStep <= step) return;
 
     dispatch(changeStep(step));

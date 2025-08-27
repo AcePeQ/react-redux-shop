@@ -15,7 +15,7 @@
   font-size: 4.2rem;
 }
 
-.galleryModal {
+.summaryModal {
   position: fixed;
   top: 0;
   left: 0;
@@ -46,9 +46,34 @@
 .modal {
   position: relative;
   z-index: 1002;
-  max-width: 70rem;
+  max-width: 45rem;
   width: 100%;
 
   border-radius: 12px;
   overflow: hidden;
+
+  background-color: var(--text-primary);
+  box-shadow: 0 6px 12px var(--shadow-color);
+
+  padding: 2rem;
+
+  display: flex;
+  flex-direction: column;
+
+  h2 {
+    font-size: 3.2rem;
+
+    padding-bottom: 1rem;
+    border-bottom: 2px solid var(--primary-color);
+    margin-bottom: 1rem;
+  }
+
+  p {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+  }
+
+  button {
+    margin-left: auto;
+  }
 }

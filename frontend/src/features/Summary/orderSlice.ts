@@ -55,7 +55,7 @@ export function orderMeal(order: TOrder) {
       });
 
       if (!res.ok) {
-        throw new Error("Could not fetch menu data!");
+        throw new Error("Could not send your order");
       }
 
       const data = await res.json();
