@@ -11,7 +11,7 @@
   justify-items: center;
 
   padding: 0 3rem 3rem;
-  border-bottom: 1px solid var(--primary-light);
+  border-bottom: 1px solid var(--text-primary);
 }
 
 .summaryGrid {
@@ -55,7 +55,7 @@
   border: none;
   cursor: pointer;
 
-  color: var(--primary-light);
+  color: var(--primary-first);
 
   font-size: 3.6rem;
 }

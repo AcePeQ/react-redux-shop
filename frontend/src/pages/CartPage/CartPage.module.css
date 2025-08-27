@@ -19,8 +19,7 @@
   font-weight: 500;
   line-height: 1;
 
-  text-shadow: 0 5px 2px var(--background-dark);
-  color: var(--primary-color);
+  text-shadow: 0 5px 2px var(--background-first);
 
   padding-top: 20dvh;
 }

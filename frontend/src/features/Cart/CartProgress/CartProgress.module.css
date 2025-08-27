@@ -19,7 +19,8 @@
 
   border-radius: 50%;
 
-  border: 3px solid var(--primary-color);
+  border: 3px solid var(--primary-first);
+  color: var(--primary-first);
 
   display: flex;
   align-items: center;
@@ -79,6 +80,8 @@
   height: 15px;
 
   margin-top: 2rem;
+
+  box-shadow: 0 4px 8px var(--background-first);
 }
 
 .progressBar::-webkit-progress-bar {
@@ -87,6 +90,6 @@
 }
 
 .progressBar::-webkit-progress-value {
-  background-color: var(--primary-color);
+  background-color: var(--primary-first);
   border-radius: 12px;
 }

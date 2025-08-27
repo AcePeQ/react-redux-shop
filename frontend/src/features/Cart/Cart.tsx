@@ -24,7 +24,11 @@ function Cart() {
         <p className={styles.empty}>Cart is empty</p>
       )}
 
-      <CartSummary buttonText="Go to Shipment" onNext={handleChangeStep} />
+      <CartSummary
+        isButtonDisable={false}
+        buttonText="Go to Shipment"
+        onNext={handleChangeStep}
+      />
     </div>
   );
 }

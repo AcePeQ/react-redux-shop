@@ -52,8 +52,8 @@
   border-radius: 12px;
   overflow: hidden;
 
-  background-color: var(--text-primary);
-  box-shadow: 0 6px 12px var(--shadow-color);
+  background-color: var(--background-first);
+  box-shadow: 0 4px 8px var(--shadow-color);
 
   padding: 2rem;
 
@@ -64,13 +64,16 @@
     font-size: 3.2rem;
 
     padding-bottom: 1rem;
-    border-bottom: 2px solid var(--primary-color);
+    color: var(--primary-first);
+    border-bottom: 2px solid var(--text-primary);
     margin-bottom: 1rem;
   }
 
   p {
     font-size: 1.8rem;
     margin-bottom: 1.5rem;
+
+    color: var(--primary-secondary);
   }
 
   button {

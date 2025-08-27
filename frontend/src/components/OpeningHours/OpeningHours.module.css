@@ -1,5 +1,5 @@
 .wrapper {
-  border: 1px solid var(--primary-light);
+  border: 2px solid var(--primary-secondary);
   border-radius: 12px;
 
   overflow: hidden;
@@ -24,8 +24,6 @@
   text-transform: uppercase;
 
   text-align: center;
-
-  color: var(--primary-light);
 }
 
 .hours {
@@ -45,7 +43,7 @@
   font-size: 1.7rem;
   font-weight: 400;
 
-  color: var(--primary-light);
+  color: var(--primary-first);
 }
 
 .dots {
@@ -59,5 +57,5 @@
   width: 100%;
   bottom: 8px;
 
-  border-bottom: 2px dotted var(--text-primary);
+  border-bottom: 2px dotted var(--primary-secondary);
 }

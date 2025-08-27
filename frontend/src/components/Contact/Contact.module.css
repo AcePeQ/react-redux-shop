@@ -1,5 +1,5 @@
 .wrapper {
-  border: 1px solid var(--primary-light);
+  border: 2px solid var(--primary-secondary);
   border-radius: 12px;
 
   overflow: hidden;
@@ -24,8 +24,6 @@
   text-transform: uppercase;
 
   text-align: center;
-
-  color: var(--primary-light);
 }
 
 .address {
@@ -42,7 +40,7 @@
   font-size: 1.7rem;
   font-weight: 400;
 
-  color: var(--primary-light);
+  color: var(--primary-first);
 
   display: flex;
   justify-content: space-between;
