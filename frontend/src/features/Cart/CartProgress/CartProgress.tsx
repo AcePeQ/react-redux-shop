@@ -1,6 +1,8 @@
+import { useEffect } from "react";
 import { useAppDispatch, useAppSelector } from "../../../hooks/storeHooks";
 import { changeStep } from "../cartProgressSlice";
 import styles from "./CartProgress.module.css";
+import { motion, useMotionValue, useSpring, useTransform } from "motion/react";
 
 const steps = [
   { title: "Cart", id: 0 },
@@ -9,14 +11,32 @@ const steps = [
 ];
 
 function CartProgress() {
+  const percent = useMotionValue(0);
   const currentStep = useAppSelector((state) => state.progress.currentStep);
   const dispatch = useAppDispatch();
+
+  const springWidth = useSpring(percent, { bounce: 0 });
+  const width = useTransform(springWidth, (v) => `${v}%`);
 
   function changeProgressStep(step: number) {
     if (currentStep <= step) return;
 
     dispatch(changeStep(step));
   }
+
+  useEffect(() => {
+    if (currentStep === 0) {
+      percent.set(4.25);
+    }
+
+    if (currentStep === 1) {
+      percent.set(50);
+    }
+
+    if (currentStep === 2) {
+      percent.set(100);
+    }
+  }, [currentStep, percent]);
 
   return (
     <div className={styles.progressWrapper}>
@@ -34,7 +54,9 @@ function CartProgress() {
         ))}
       </ul>
 
-      <progress className={styles.progressBar} value={4.25} max={100} />
+      <motion.div className={styles.progress}>
+        <motion.div style={{ width }} className={styles.progressInner} />
+      </motion.div>
     </div>
   );
 }
