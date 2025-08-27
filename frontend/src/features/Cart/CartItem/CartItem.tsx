@@ -3,6 +3,7 @@ import { useAppDispatch } from "../../../hooks/storeHooks";
 import { currencyFormater } from "../../../utils/utilsFunctions";
 import { deleteFromCart, ICartItem, updateItemQuantity } from "../cartSlice";
 import styles from "./CartItem.module.css";
+import { motion } from "motion/react";
 
 function CartItem({
   item,
@@ -23,7 +24,13 @@ function CartItem({
   }
 
   return (
-    <li className={`${styles.item} ${styles[isSummary ? "summaryGrid" : ""]}`}>
+    <motion.li
+      layout
+      initial={{ y: 100, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      exit={{ x: -100, opacity: 0 }}
+      className={`${styles.item} ${styles[isSummary ? "summaryGrid" : ""]}`}
+    >
       <img
         className={styles.image}
         src={`http://localhost:3000/${item.image}`}
@@ -52,7 +59,7 @@ function CartItem({
       </div>
       <p className={styles.price}>{price}</p>
       {!isSummary && <Button onClick={handleDeleteItem}>X</Button>}
-    </li>
+    </motion.li>
   );
 }
 
