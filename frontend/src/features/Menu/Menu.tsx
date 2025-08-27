@@ -20,11 +20,11 @@ function Menu() {
   }, [dispatch, isMenuFetched]);
 
   if (isLoading) {
-    return <p>Loading...</p>;
+    return <p className={styles.loading}>Loading...</p>;
   }
 
   if (error) {
-    return <p>Erorr</p>;
+    return <p className={styles.error}>{error}</p>;
   }
 
   const rowsArray = sliceArrayIntoRows(menu, 4);

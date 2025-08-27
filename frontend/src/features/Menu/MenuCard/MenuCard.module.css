@@ -28,7 +28,8 @@
   padding: 3rem;
   overflow: hidden;
 
-  border: 2px solid var(--primary-color);
+  box-shadow: 0 5px 0 var(--primary-color);
+  color: var(--primary-color);
   border-radius: 12px;
 
   top: 0;
@@ -84,7 +85,7 @@
   font-size: 3.8rem;
   font-weight: 700;
 
-  text-shadow: 0 4px 1px var(--background-dark);
+  text-shadow: 0 4px 1px var(--background-first);
 }
 
 .content {
@@ -110,10 +111,12 @@
 
 .description {
   font-size: 2rem;
+  color: var(--primary-light);
 }
 
 .price {
   align-self: flex-end;
+  color: var(--primary-light);
 
   font-size: 3.2rem;
 }

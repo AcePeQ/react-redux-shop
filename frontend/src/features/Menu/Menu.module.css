@@ -21,3 +21,16 @@
 
   gap: 3rem;
 }
+
+.loading {
+  text-align: center;
+
+  font-size: 2.6rem;
+}
+
+.error {
+  text-align: center;
+  font-size: 2rem;
+
+  color: var(--error-color);
+}

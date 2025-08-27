@@ -20,6 +20,7 @@ function MenuCard({ card }: { card: IMenuItem }) {
           <img
             className={styles.bg_image}
             src={`http://localhost:3000/${card.image}`}
+            alt={card.description}
           />
           <h2 className={styles.heading}>{card.name}</h2>
         </div>
@@ -27,6 +28,7 @@ function MenuCard({ card }: { card: IMenuItem }) {
           <img
             className={styles.bg_image}
             src={`http://localhost:3000/${card.image}`}
+            alt={card.description}
           />
           <div className={styles.bg_overlay} />
           <div className={styles.content}>
