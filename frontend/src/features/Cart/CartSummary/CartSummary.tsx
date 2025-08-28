@@ -6,6 +6,8 @@ import {
 } from "../../../utils/utilsFunctions";
 import styles from "./CartSummary.module.css";
 
+import { motion } from "motion/react";
+
 function CartSummary({
   onNext,
   buttonText,
@@ -25,7 +27,11 @@ function CartSummary({
   const deliverPrice = calculateDeliveryCost(totalPrice);
 
   return (
-    <div className={styles.summary}>
+    <motion.div
+      initial={{ y: 100, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      className={styles.summary}
+    >
       <div className={styles.summarySticky}>
         <div className={styles.summaryRow}>
           <p>Subtotal</p>
@@ -48,7 +54,7 @@ function CartSummary({
           </Button>
         )}
       </div>
-    </div>
+    </motion.div>
   );
 }
 
