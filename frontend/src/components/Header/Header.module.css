@@ -24,3 +24,9 @@
     transform: translateX(-50%) !important;
   }
 }
+
+@media screen and (max-width: 425px) {
+  .header {
+    gap: 1rem;
+  }
+}

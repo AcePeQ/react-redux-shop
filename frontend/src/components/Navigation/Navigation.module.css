@@ -58,3 +58,11 @@
 .link:focus-within .underline {
   background-color: var(--primary-light);
 }
+
+@media screen and (max-width: 425px) {
+  .link:link,
+  .link:visited {
+    font-size: 1.8rem;
+    padding: 0.5rem 1rem;
+  }
+}

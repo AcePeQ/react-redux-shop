@@ -9,3 +9,9 @@
 
   line-height: 100%;
 }
+
+@media screen and (max-width: 425px) {
+  .logo {
+    font-size: 2.6rem;
+  }
+}
