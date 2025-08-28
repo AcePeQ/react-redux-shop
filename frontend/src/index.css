@@ -4,7 +4,7 @@
   --primary-dark: #b8935f; /* Ciemniejszy złoty */
   --primary-light: #e8c79a; /* Jasniejszy złoty */
 
-  --primary-first: rgb(239, 231, 210);
+  --primary-first: #efe7d2;
   --primary-secondary: #f5f2eab3;
 
   --input-bg-color: #18181880;
@@ -141,4 +141,9 @@ a:visited {
 #root,
 #__next {
   isolation: isolate;
+}
+
+::selection {
+  background-color: var(--primary-color);
+  color: var(--text-white);
 }

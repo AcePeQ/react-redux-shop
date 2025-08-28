@@ -47,7 +47,22 @@ function CartProgress() {
               onClick={() => changeProgressStep(step.id)}
               className={styles.centerBox}
             >
-              <div className={styles.number}>{step.id + 1}</div>
+              <motion.div
+                initial={{ color: "#efe7d2", backgroundColor: "#efe7d20" }}
+                animate={
+                  currentStep >= step.id
+                    ? { backgroundColor: "#efe7d2", color: "#0a0b0a" }
+                    : { backgroundColor: "#efe7d20" }
+                }
+                className={styles.number}
+              >
+                <motion.span
+                  key={currentStep}
+                  animate={{ rotate: currentStep >= step.id ? 360 : 0 }}
+                >
+                  {step.id + 1}
+                </motion.span>
+              </motion.div>
               <p className={styles.stepText}>{step.title}</p>
             </button>
           </li>
