@@ -10,3 +10,9 @@
 
   filter: invert(95%) grayscale(1);
 }
+
+@media screen and (max-width: 740px) {
+  .wrapper {
+    height: 35rem;
+  }
+}

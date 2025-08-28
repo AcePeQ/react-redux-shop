@@ -64,3 +64,9 @@
   height: 100%;
   object-fit: cover;
 }
+
+@media screen and (max-width: 740px) {
+  .galleryModal {
+    padding: 2rem;
+  }
+}
