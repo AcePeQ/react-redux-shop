@@ -34,7 +34,7 @@ function CartPage() {
     <AnimatedPage>
       <section className={styles.section}>
         <div className={styles.container}>
-          <motion.h2
+          <motion.h1
             initial={{ x: 150 }}
             animate={{ x: 0 }}
             transition={{
@@ -47,7 +47,7 @@ function CartPage() {
             className={styles.heading}
           >
             {stepHeading}
-          </motion.h2>
+          </motion.h1>
           <CartProgress />
 
           {stepContent}

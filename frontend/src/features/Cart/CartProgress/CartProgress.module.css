@@ -93,3 +93,11 @@
 
   height: 100%;
 }
+
+@media screen and (max-width: 1350px) {
+  .progressWrapper {
+    padding: 0 0rem;
+
+    margin: 4rem 0 8rem;
+  }
+}

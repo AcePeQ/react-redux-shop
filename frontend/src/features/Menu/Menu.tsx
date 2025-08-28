@@ -4,7 +4,7 @@ import styles from "./Menu.module.css";
 import { fetchMenu } from "./menuSlice";
 
 import { sliceArrayIntoRows } from "../../utils/utilsFunctions";
-
+import { useMediaQuery } from "react-responsive";
 import MenuRow from "./MenuRow/MenuRow";
 
 function Menu() {
@@ -12,6 +12,11 @@ function Menu() {
   const { isMenuFetched, isLoading, error, menu } = useAppSelector(
     (state) => state.menu
   );
+
+  const isDesktop = useMediaQuery({ query: "(min-width: 1630px)" });
+  const isTablet = useMediaQuery({ query: "(min-width: 1250px)" });
+  const isTabletSmaller = useMediaQuery({ query: "(min-width: 830px)" });
+  const isMobile = useMediaQuery({ query: "(max-width: 829px)" });
 
   useEffect(() => {
     if (!isMenuFetched) {
@@ -27,7 +32,17 @@ function Menu() {
     return <p className={styles.error}>{error}</p>;
   }
 
-  const rowsArray = sliceArrayIntoRows(menu, 4);
+  const itemsPerRow = isDesktop
+    ? 4
+    : isTablet
+    ? 3
+    : isTabletSmaller
+    ? 2
+    : isMobile
+    ? 1
+    : 1;
+
+  const rowsArray = sliceArrayIntoRows(menu, itemsPerRow);
 
   return (
     <section className={styles.section}>

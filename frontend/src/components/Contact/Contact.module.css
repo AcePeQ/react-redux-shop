@@ -50,3 +50,10 @@
 .content {
   text-align: right;
 }
+
+@media screen and (max-width: 1400px) {
+  .heading {
+    margin-bottom: 2rem;
+    font-size: 2.8rem;
+  }
+}

@@ -26,3 +26,11 @@
 
   gap: 2rem;
 }
+
+@media screen and (max-width: 1350px) {
+  .container {
+    height: unset;
+    grid-template-columns: 1fr;
+    grid-template-rows: 85dvh max-content;
+  }
+}

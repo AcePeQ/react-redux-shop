@@ -59,3 +59,10 @@
 
   border-bottom: 2px dotted var(--primary-secondary);
 }
+
+@media screen and (max-width: 1400px) {
+  .heading {
+    margin-bottom: 2rem;
+    font-size: 2.8rem;
+  }
+}

@@ -36,3 +36,22 @@
 
   text-shadow: 0 5px 2px var(--background-first);
 }
+
+@media screen and (max-width: 1400px) {
+  .heading {
+    font-size: 10rem;
+  }
+}
+
+@media screen and (max-width: 1350px) {
+  .wrapper {
+    grid-column: 1/-1;
+
+    align-items: flex-end;
+    justify-content: center;
+  }
+
+  .heading {
+    text-align: center;
+  }
+}

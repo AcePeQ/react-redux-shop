@@ -26,7 +26,7 @@ function CartProgress() {
 
   useEffect(() => {
     if (currentStep === 0) {
-      percent.set(4.25);
+      percent.set(0);
     }
 
     if (currentStep === 1) {

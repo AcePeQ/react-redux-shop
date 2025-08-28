@@ -1,7 +1,7 @@
 .section {
   min-height: 100dvh;
 
-  padding-bottom: 4rem;
+  padding: 4rem;
 }
 
 .container {
@@ -22,4 +22,17 @@
   text-shadow: 0 5px 2px var(--background-first);
 
   padding-top: 20dvh;
+}
+
+@media screen and (max-width: 1400px) {
+  .heading {
+    font-size: 10rem;
+  }
+}
+
+@media screen and (max-width: 1350px) {
+  .heading {
+    padding-top: 15dvh;
+    text-align: center;
+  }
 }
