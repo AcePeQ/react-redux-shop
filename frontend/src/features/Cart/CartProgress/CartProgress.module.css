@@ -96,8 +96,36 @@
 
 @media screen and (max-width: 1350px) {
   .progressWrapper {
-    padding: 0 0rem;
-
     margin: 4rem 0 8rem;
+  }
+}
+
+@media screen and (max-width: 645px) {
+  .progressBox {
+    padding: 0 1rem;
+  }
+
+  .number {
+    width: 4rem;
+    height: 4rem;
+  }
+
+  .stepText,
+  .number {
+    font-size: 2rem;
+    font-weight: 500;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .number {
+    width: 3.25rem;
+    height: 3.25rem;
+  }
+
+  .stepText,
+  .number {
+    font-size: 1.8rem;
+    font-weight: 500;
   }
 }

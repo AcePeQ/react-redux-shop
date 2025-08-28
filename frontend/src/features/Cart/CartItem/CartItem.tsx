@@ -1,3 +1,4 @@
+import { useMediaQuery } from "react-responsive";
 import Button from "../../../components/Button/Button";
 import { useAppDispatch } from "../../../hooks/storeHooks";
 import { currencyFormater } from "../../../utils/utilsFunctions";
@@ -14,6 +15,7 @@ function CartItem({
 }) {
   const dispatch = useAppDispatch();
   const price = currencyFormater(Number(item.price));
+  const isMobile = useMediaQuery({ query: "(max-width: 720px)" });
 
   function handleDeleteItem() {
     dispatch(deleteFromCart(item.id));
@@ -31,33 +33,79 @@ function CartItem({
       exit={{ x: -100, opacity: 0 }}
       className={`${styles.item} ${styles[isSummary ? "summaryGrid" : ""]}`}
     >
-      <img
-        className={styles.image}
-        src={`http://localhost:3000/${item.image}`}
-      />
-      <h2 className={styles.heading}>{item.name}</h2>
-      <div className={styles.actionButtons}>
-        {!isSummary && (
-          <button
-            onClick={() => handleUpdateItem(-1)}
-            className={styles.buttonQuantity}
-          >
-            -
-          </button>
-        )}
-        <span className={styles.quantity}>
-          {isSummary && "Quantity:"} {item.quantity}
-        </span>
-        {!isSummary && (
-          <button
-            onClick={() => handleUpdateItem(1)}
-            className={styles.buttonQuantity}
-          >
-            +
-          </button>
-        )}
-      </div>
-      <p className={styles.price}>{price}</p>
+      {isMobile && (
+        <div className={styles.centerBox}>
+          <img
+            className={styles.image}
+            src={`http://localhost:3000/${item.image}`}
+          />
+          <h2 className={styles.heading}>{item.name}</h2>
+        </div>
+      )}
+
+      {!isMobile && (
+        <>
+          <img
+            className={styles.image}
+            src={`http://localhost:3000/${item.image}`}
+          />
+          <h2 className={styles.heading}>{item.name}</h2>
+        </>
+      )}
+
+      {isMobile && (
+        <div className={styles.centerBox}>
+          <p className={styles.price}>{price}</p>
+          <div className={styles.actionButtons}>
+            {!isSummary && (
+              <button
+                onClick={() => handleUpdateItem(-1)}
+                className={styles.buttonQuantity}
+              >
+                -
+              </button>
+            )}
+            <span className={styles.quantity}>
+              {isSummary && "Quantity:"} {item.quantity}
+            </span>
+            {!isSummary && (
+              <button
+                onClick={() => handleUpdateItem(1)}
+                className={styles.buttonQuantity}
+              >
+                +
+              </button>
+            )}
+          </div>
+        </div>
+      )}
+
+      {!isMobile && (
+        <>
+          <div className={styles.actionButtons}>
+            {!isSummary && (
+              <button
+                onClick={() => handleUpdateItem(-1)}
+                className={styles.buttonQuantity}
+              >
+                -
+              </button>
+            )}
+            <span className={styles.quantity}>
+              {isSummary && "Quantity:"} {item.quantity}
+            </span>
+            {!isSummary && (
+              <button
+                onClick={() => handleUpdateItem(1)}
+                className={styles.buttonQuantity}
+              >
+                +
+              </button>
+            )}
+          </div>
+          <p className={styles.price}>{price}</p>
+        </>
+      )}
       {!isSummary && <Button onClick={handleDeleteItem}>X</Button>}
     </motion.li>
   );
