@@ -1,5 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { AppDispatch } from "../../stores/store";
+import { API_URL } from "../../utils/utilsFunctions";
 
 interface MenuState {
   menu: IMenuItem[];
@@ -43,7 +44,7 @@ const menuSlice = createSlice({
 export function fetchMenu() {
   return async (dispatch: AppDispatch) => {
     const fetchData = async () => {
-      const res = await fetch("http://localhost:3000/meals", {
+      const res = await fetch(`${API_URL}/meals`, {
         headers: {
           "Content-Type": "application/json",
         },

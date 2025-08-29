@@ -1,6 +1,6 @@
 import Button from "../../../components/Button/Button";
 import { useAppDispatch, useAppSelector } from "../../../hooks/storeHooks";
-import { currencyFormater } from "../../../utils/utilsFunctions";
+import { API_URL, currencyFormater } from "../../../utils/utilsFunctions";
 import { addToCart } from "../../Cart/cartSlice";
 import { IMenuItem } from "../menuSlice";
 import styles from "./MenuCard.module.css";
@@ -23,7 +23,7 @@ function MenuCard({ card }: { card: IMenuItem }) {
         <div className={styles.card_front}>
           <img
             className={styles.bg_image}
-            src={`http://localhost:3000/${card.image}`}
+            src={`${API_URL}/${card.image}`}
             alt={card.description}
           />
           <h2 className={styles.heading}>{card.name}</h2>
@@ -31,7 +31,7 @@ function MenuCard({ card }: { card: IMenuItem }) {
         <div className={styles.card_back}>
           <img
             className={styles.bg_image}
-            src={`http://localhost:3000/${card.image}`}
+            src={`${API_URL}/${card.image}`}
             alt={card.description}
           />
           <div className={styles.bg_overlay} />

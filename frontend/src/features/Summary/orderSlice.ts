@@ -2,6 +2,7 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { AppDispatch } from "../../stores/store";
 import { ICartItem } from "../Cart/cartSlice";
 import { ShipmentFormData } from "../Cart/cartProgressSlice";
+import { API_URL } from "../../utils/utilsFunctions";
 
 export type TOrder = {
   order: ICartItem[];
@@ -46,7 +47,7 @@ export const { setOrderStatus, setPending, setError, clearOrder } =
 export function orderMeal(order: TOrder) {
   return async (dispatch: AppDispatch) => {
     const sendOrder = async () => {
-      const res = await fetch("http://localhost:3000/order", {
+      const res = await fetch(`${API_URL}/order`, {
         headers: {
           "Content-Type": "application/json",
         },
