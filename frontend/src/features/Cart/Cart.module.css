@@ -19,4 +19,14 @@
   .cart {
     grid-template-columns: 1fr;
   }
+
+  .empty {
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .empty {
+    font-size: 3.2rem;
+  }
 }

@@ -36,6 +36,7 @@
 .price,
 .quantity {
   font-size: 2.6rem;
+  text-align: center;
 }
 
 .actionButtons {
@@ -94,6 +95,10 @@
   .item {
     grid-template-rows: max-content;
     grid-template-columns: 17rem 1fr max-content;
+  }
+
+  .summaryGrid {
+    grid-template-columns: 1fr 1fr;
   }
 
   .centerBox {

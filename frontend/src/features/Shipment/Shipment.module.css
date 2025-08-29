@@ -14,3 +14,27 @@
 
   gap: 4rem;
 }
+
+@media screen and (max-width: 1035px) {
+  .form {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .form {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .form {
+    padding: 0 1.5rem;
+  }
+}
+
+@media screen and (max-width: 370px) {
+  .form {
+    padding: 0 1rem;
+  }
+}

@@ -2,6 +2,7 @@
   min-height: 100dvh;
 
   padding: 4rem;
+  overflow: hidden;
 }
 
 .container {
@@ -22,6 +23,7 @@
   text-shadow: 0 5px 2px var(--background-first);
 
   padding-top: 20dvh;
+  padding-inline: 2rem;
 }
 
 @media screen and (max-width: 1400px) {
@@ -42,5 +44,9 @@
     min-height: 100dvh;
 
     padding: 4rem 0rem;
+  }
+
+  .heading {
+    font-size: 6.4rem;
   }
 }

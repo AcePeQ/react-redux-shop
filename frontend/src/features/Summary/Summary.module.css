@@ -27,6 +27,8 @@
   align-items: center;
 
   z-index: 1000;
+
+  padding: 2rem;
 }
 
 .overlay {
@@ -78,5 +80,11 @@
 
   button {
     margin-left: auto;
+  }
+}
+
+@media screen and (max-width: 1220px) {
+  .cart {
+    grid-template-columns: 1fr;
   }
 }
