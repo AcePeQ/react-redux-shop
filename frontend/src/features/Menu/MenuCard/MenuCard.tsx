@@ -1,17 +1,21 @@
 import Button from "../../../components/Button/Button";
-import { useAppDispatch } from "../../../hooks/storeHooks";
+import { useAppDispatch, useAppSelector } from "../../../hooks/storeHooks";
 import { currencyFormater } from "../../../utils/utilsFunctions";
 import { addToCart } from "../../Cart/cartSlice";
 import { IMenuItem } from "../menuSlice";
 import styles from "./MenuCard.module.css";
+import { AnimatePresence, motion } from "motion/react";
 
 function MenuCard({ card }: { card: IMenuItem }) {
+  const cart = useAppSelector((state) => state.cart.cart);
   const dispatch = useAppDispatch();
   const price = currencyFormater(Number(card.price));
 
   function handleAddItemToCart() {
     dispatch(addToCart(card));
   }
+
+  const isInCard = cart.findIndex((item) => item.id === card.id);
 
   return (
     <div className={styles.container}>
@@ -34,7 +38,16 @@ function MenuCard({ card }: { card: IMenuItem }) {
           <div className={styles.content}>
             <p className={styles.description}>{card.description}</p>
             <div className={styles.content_bottom}>
-              <Button onClick={handleAddItemToCart}>Add to Cart</Button>
+              <AnimatePresence mode="wait">
+                {isInCard < 0 && (
+                  <motion.div
+                    initial={{ scale: 1, opacity: 1 }}
+                    exit={{ scale: 0, opacity: 0 }}
+                  >
+                    <Button onClick={handleAddItemToCart}>Add to Cart</Button>
+                  </motion.div>
+                )}
+              </AnimatePresence>
               <p className={styles.price}>{price}</p>
             </div>
           </div>

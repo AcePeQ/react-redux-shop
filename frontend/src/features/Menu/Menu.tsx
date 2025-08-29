@@ -47,8 +47,8 @@ function Menu() {
   return (
     <section className={styles.section}>
       <div className={styles.menu}>
-        {rowsArray.map((innerArray) => (
-          <MenuRow innerArray={innerArray} />
+        {rowsArray.map((innerArray, index) => (
+          <MenuRow key={index} innerArray={innerArray} />
         ))}
       </div>
     </section>

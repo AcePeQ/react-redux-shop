@@ -104,7 +104,8 @@
 .content_bottom {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+
+  width: 100%;
 
   gap: 2rem;
 }
@@ -115,8 +116,9 @@
 }
 
 .price {
-  align-self: flex-end;
   color: var(--primary-light);
+
+  margin-left: auto;
 
   font-size: 3.2rem;
 }
